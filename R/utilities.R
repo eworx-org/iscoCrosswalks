@@ -1,17 +1,24 @@
 #' Crosswalk
 #' 
 #' Go from a source taxonomy to a target taxonomy.
-#' @param dat Input data, with at least a `job` column and a `count` column. Can be of type data.frame or data.table.
+#' @param dat Input data, with at least a `job` column and a `count` column. Can be of type `data.frame` or `data.table`.
 #' @param source Taxonomy of input vector.
 #' @param target Taxonomy of output vector.
-#' @return data.table with `job` column converted to target taxonomy and `count` column.
+#' @param aggr Whether or not to aggregate results by `target` taxonomy. Defaults to `TRUE`.
+#' @return Table of type `data.table` with `count` values converted from `source` taxonomy to `target` taxonomy.
 #' @export
-crosswalk <- function(dat, source, target) {
+crosswalk <- function(dat, source, target, aggr = TRUE) {
+  dat <- copy(dat)
+  setnames(dat, "job", source)
   concord <- concordances(source, target)
   concord[, unique_target := .N, by = source]
-  res <- merge(dat, concord, by.x = "job", by.y = source,
-               allow.cartesian = TRUE)
+  res <- merge(dat, concord, by = source, allow.cartesian = TRUE)
   res[, count := count / unique_target]
+  if(aggr) {
+    setnames(res, target, "job")
+    res <- res[, .(count = sum(count)), by = "job"]
+    return(res)
+  }
   res[, c(target, names(dat)), with = FALSE]
 }
 

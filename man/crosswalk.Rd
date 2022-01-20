@@ -4,17 +4,19 @@
 \alias{crosswalk}
 \title{Crosswalk}
 \usage{
-crosswalk(dat, source, target)
+crosswalk(dat, source, target, aggr = TRUE)
 }
 \arguments{
-\item{dat}{Input data, with at least a \code{job} column and a \code{count} column. Can be of type data.frame or data.table.}
+\item{dat}{Input data, with at least a \code{job} column and a \code{count} column. Can be of type \code{data.frame} or \code{data.table}.}
 
 \item{source}{Taxonomy of input vector.}
 
 \item{target}{Taxonomy of output vector.}
+
+\item{aggr}{Whether or not to aggregate results by \code{target} taxonomy. Defaults to \code{TRUE}.}
 }
 \value{
-data.table with \code{job} column converted to target taxonomy and \code{count} column.
+Table of type \code{data.table} with \code{count} values converted from \code{source} taxonomy to \code{target} taxonomy.
 }
 \description{
 Go from a source taxonomy to a target taxonomy.
