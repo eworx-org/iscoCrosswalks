@@ -8,7 +8,10 @@
 #' @return Table of type `data.table` with `count` values converted from `source` taxonomy to `target` taxonomy.
 #' @export
 crosswalk <- function(dat, source, target, aggr = TRUE) {
+  # due to NSE notes in R CMD check
+  NULL -> unique_target -> count -> .
   dat <- copy(dat)
+  
   setnames(dat, "job", source)
   concord <- concordances(source, target)
   concord[, unique_target := .N, by = source]
@@ -30,6 +33,7 @@ crosswalk <- function(dat, source, target, aggr = TRUE) {
 #' @return data.table with `source` and `target` columns.
 #' @export
 concordances <- function(source, target) {
-  res <- fread("data/esco.csv")
+  esco <- data.table(esco)
+  res <- esco
   unique(res[, c(source, target), with = FALSE])
 }
