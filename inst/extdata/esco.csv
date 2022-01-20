@@ -1,25 +1,25 @@
 esco_label,esco_key,isco_4_label,isco_4_key,isco_3_label,isco_3_key,isco_2_label,isco_2_key,isco_1_label,isco_1_key
-fleet commander,0b1d8dcb-d941-4d79-99bf-fc10c1806c43,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-navy officer,262f21a3-ae78-46f4-a5f9-5a1f502caa90,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-artillery officer,7696b15a-c52e-4ac5-b38d-9eeb010c5fa3,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-army captain,9bf4c8ea-e814-4772-ae31-0f29672dc497,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-lieutenant,b223f402-0318-4e27-8691-df6e7f7295d2,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-colonel,b864c9a3-ef6e-46a0-a40c-66188f74dfa7,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-brigadier,bbd1fe06-1b55-4937-9317-fc162311ab38,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-armed forces officer,c6a26e11-bdf1-47a1-849d-fdcf819d458d,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-army general,c6e5e0e7-fa99-4f71-9fc1-9889d85282a5,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-squadron leader,e44b2459-af5e-492d-9c57-d9c2e62944e7,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-army major,e4c915ff-6c9c-4fa9-a8fb-09d0c67e30d4,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-air force officer,f2cc5978-e45c-4f28-b859-7f89221b0505,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,1,Armed forces occupations,0
-special forces officer,1de91afd-9da2-47ab-a7e7-19bf931709a4,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,2,Armed forces occupations,0
-army corporal,4a3f40a8-0587-494c-b8d3-7098b8c5992f,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,2,Armed forces occupations,0
-warfare specialist,86c892cf-09a3-44c8-b9d1-814d93dbcbb4,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,2,Armed forces occupations,0
-sergeant,cb3b2662-774a-4e6f-841e-f120244d7031,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,2,Armed forces occupations,0
-intelligence communications interceptor,35e67944-231e-4bc9-8c69-560f203167ff,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",3,Armed forces occupations,0
-military engineer,555235ce-8c45-409b-a6c9-83e69c2d2bce,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",3,Armed forces occupations,0
-infantry soldier,bd5a2f44-fc06-45fd-909b-3a4001c8b8a3,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",3,Armed forces occupations,0
-air force pilot,c94dc5b2-6b23-4915-8de5-a4e6ae86d802,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",3,Armed forces occupations,0
-bomb disposal technician,fdc8adfb-1807-4146-98ae-3a26fbe19996,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",3,Armed forces occupations,0
+fleet commander,0b1d8dcb-d941-4d79-99bf-fc10c1806c43,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+navy officer,262f21a3-ae78-46f4-a5f9-5a1f502caa90,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+artillery officer,7696b15a-c52e-4ac5-b38d-9eeb010c5fa3,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+army captain,9bf4c8ea-e814-4772-ae31-0f29672dc497,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+lieutenant,b223f402-0318-4e27-8691-df6e7f7295d2,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+colonel,b864c9a3-ef6e-46a0-a40c-66188f74dfa7,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+brigadier,bbd1fe06-1b55-4937-9317-fc162311ab38,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+armed forces officer,c6a26e11-bdf1-47a1-849d-fdcf819d458d,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+army general,c6e5e0e7-fa99-4f71-9fc1-9889d85282a5,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+squadron leader,e44b2459-af5e-492d-9c57-d9c2e62944e7,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+army major,e4c915ff-6c9c-4fa9-a8fb-09d0c67e30d4,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+air force officer,f2cc5978-e45c-4f28-b859-7f89221b0505,Commissioned armed forces officers,110,Commissioned armed forces officers,11,Commissioned armed forces officers,01,Armed forces occupations,0
+special forces officer,1de91afd-9da2-47ab-a7e7-19bf931709a4,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,02,Armed forces occupations,0
+army corporal,4a3f40a8-0587-494c-b8d3-7098b8c5992f,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,02,Armed forces occupations,0
+warfare specialist,86c892cf-09a3-44c8-b9d1-814d93dbcbb4,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,02,Armed forces occupations,0
+sergeant,cb3b2662-774a-4e6f-841e-f120244d7031,Non-commissioned armed forces officers,210,Non-commissioned armed forces officers,21,Non-commissioned armed forces officers,02,Armed forces occupations,0
+intelligence communications interceptor,35e67944-231e-4bc9-8c69-560f203167ff,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",03,Armed forces occupations,0
+military engineer,555235ce-8c45-409b-a6c9-83e69c2d2bce,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",03,Armed forces occupations,0
+infantry soldier,bd5a2f44-fc06-45fd-909b-3a4001c8b8a3,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",03,Armed forces occupations,0
+air force pilot,c94dc5b2-6b23-4915-8de5-a4e6ae86d802,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",03,Armed forces occupations,0
+bomb disposal technician,fdc8adfb-1807-4146-98ae-3a26fbe19996,"Armed forces occupations, other ranks",310,"Armed forces occupations, other ranks",31,"Armed forces occupations, other ranks",03,Armed forces occupations,0
 secretary of state,0ee67d5e-8de9-48f0-97c5-ba23d486b1e9,Legislators,1111,Legislators and senior officials,111,"Chief executives, senior officials and legislators",11,Managers,1
 government minister,404a50e9-61ce-448d-a695-bbfc697a0727,Legislators,1111,Legislators and senior officials,111,"Chief executives, senior officials and legislators",11,Managers,1
 member of parliament,5bca96fd-4203-400b-be58-9e9b50bc98da,Legislators,1111,Legislators and senior officials,111,"Chief executives, senior officials and legislators",11,Managers,1
