@@ -2,6 +2,7 @@
 # crosswalkR
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/eworx-org/crosswalkR/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/crosswalkR/actions)
 <!-- badges: end -->
 
 The goal of crosswalkR is to ...
