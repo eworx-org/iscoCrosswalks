@@ -1,0 +1,24 @@
+---
+title: "isco-crosswalks"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{isco-crosswalks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(crosswalkR)
+```
+
+# Introduction
+
+This package transforms aggregate statistics to similar taxonomies of
+occupations.
