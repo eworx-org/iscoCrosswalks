@@ -35,10 +35,11 @@ isco_4 <- esco[, .(isco08 = as.character(isco_4_key),
                    isco_label = isco_4_label)] %>%
   unique()
 
+isco_4 <- isco[nchar(code) == 4]
+setnames(isco_4, c("isco08", "isco_label"))
+
 soc10_isco08 <- merge(soc_isco_10_labs, isco_4, by = "isco08")
 soc10_isco08[nchar(isco08) == 3, isco08 := paste0("0", isco08)]
 soc10_isco08 <- soc10_isco08[ , .(soc10, isco08, soc_label, isco_label)]
 
 usethis::use_data(soc10_isco08, overwrite = TRUE)
-
-

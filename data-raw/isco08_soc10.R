@@ -31,11 +31,11 @@ soc_10[, soc10 := gsub("\\..*", "", code)]
 soc_10[, soc10 := gsub("-", "", soc10)]
 soc_isco_10_labs <- merge(soc_isco_10, soc_10[, .(soc10, soc_label)])
 
-isco_3 <- esco[, .(isco08 = as.character(isco_3_key),
-                   isco_label = isco_3_label)] %>%
-  unique()
+isco_3 <- isco[nchar(code) == 3]
+setnames(isco_3, c("isco08", "isco_label"))
 
-isco08_soc10 <- merge(soc_isco_10_labs, isco_3, by = "isco08")
+isco08_soc10 <- merge(soc_isco_10_labs, isco_3, by = "isco08", all = T)
+isco08_soc10 <- isco08_soc10[ , .(isco08, soc10, isco_label, soc_label)]
+isco08_soc10 <- unique(isco08_soc10)
 
-isco08_soc10[nchar(isco08) == 3, isco08 := paste0("0", isco08)]
-soc10_isco08 <- soc10_isco08[ , .(soc10, isco08, soc_label, isco_label)]
+usethis::use_data(isco08_soc10, overwrite = TRUE)

@@ -9,3 +9,8 @@ crosswalks_data <-
 dest_file <- "data-raw/stata_dset/onetsoc_to_isco_cws_ibs.zip"
 download.file(crosswalks_data, dest_file)
 unzip(dest_file, exdir = "data-raw/stata_dset/")
+
+soc_10_structure <- "https://www.bls.gov/soc/soc_structure_2010.xls"
+dest_file <- "data-raw/onet_classification/soc_structure_2010.xls"
+download.file(soc_10_structure, dest_file)
+
