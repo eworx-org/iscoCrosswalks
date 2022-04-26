@@ -1,7 +1,15 @@
-soc_isco_crosswalk <- function(data, indicator = FALSE, isco_lvl = 3, soc_lvl = "soc_3") {
+soc_isco_crosswalk <- function(data,
+                               soc_lvl,
+                               isco_lvl,
+                               brkd_col = NULL,
+                               indicator = FALSE) {
+
+  mandatory_cols <- c("job", "value")
 
   stopifnot("Unknown ISCO level" = between(isco_lvl, 1 , 3))
   stopifnot("Unknown soc level" = soc_lvl %in% paste0("soc_", 1:4))
+  stopifnot(all(mandatory_cols %in% names(data)))
+  stopifnot(is.null(brkd_col) || isTRUE(brkd_col %in% names(data)))
 
   soc_lookup <- soc_groups[, .(code = get(soc_lvl), soc_label)][!is.na(code)]
 
@@ -18,7 +26,6 @@ soc_isco_crosswalk <- function(data, indicator = FALSE, isco_lvl = 3, soc_lvl = 
     soc_3 = soc_isco[, soc10 := paste0(substr(soc10, 1, 5), "0")]
   )
 
-
   cross_data <- merge(
     dat,
     soc_isco,
@@ -27,27 +34,27 @@ soc_isco_crosswalk <- function(data, indicator = FALSE, isco_lvl = 3, soc_lvl = 
   )
 
   if(isFALSE(indicator)) {
-    cross_data[, count_leaves := .N, by = "code"]
+    cross_data[, count_leaves := .N, by = c(brkd_col, "code")]
     cross_data[, value := value / count_leaves]
-    cross_data <-
-      cross_data[, .(value = sum(value, na.rm = TRUE)), by = "isco08"]
+    cross_data <- cross_data[, .(value = sum(value, na.rm = TRUE)),
+                             by = c(brkd_col, "isco08")]
   } else {
-    cross_data <-
-      cross_data[, .(value = mean(value, na.rm = TRUE)), by = "isco08"]
+    cross_data <- cross_data[, .(value = mean(value, na.rm = TRUE)),
+                             by = c(brkd_col, "isco08")]
   }
 
   cross_data[, isco08 := substr(isco08, 1, isco_lvl)]
 
   if(isFALSE(indicator)) {
-    cross_data <-
-      cross_data[, .(value = sum(value, na.rm = TRUE)), by = "isco08"]
+    cross_data <- cross_data[, .(value = sum(value, na.rm = TRUE)),
+                             by = c(brkd_col, "isco08")]
   } else {
-    cross_data <-
-      cross_data[, .(value = mean(value, na.rm = TRUE)), by = "isco08"]
+    cross_data <- cross_data[, .(value = mean(value, na.rm = TRUE)),
+                             by = c(brkd_col, "isco08")]
   }
 
   merge(cross_data, isco, by.x = "isco08", by.y = "code", all.x = TRUE)[
-    , .(isco08, preferredLabel, value)][
+    , c("isco08", "preferredLabel", brkd_col, "value"), with = FALSE][
       order(-value)]
 
 }

@@ -1,0 +1,21 @@
+job,gender,value
+Bartenders,Female,13
+Waiters and Waitresses,Female,13
+"Food Servers, Nonrestaurant",Female,13
+Secretaries and Administrative Assistants,Female,10
+General and Operations Managers,Female,6
+First-Line Supervisors of Sales Workers,Female,6
+Counter and Rental Clerks and Parts Salespersons,Female,6
+Retail Salespersons,Female,6
+Software Developers and Programmers,Female,6
+"Engineering Technicians, Except Drafters",Female,5
+Bartenders,Male,23
+Waiters and Waitresses,Male,16
+"Food Servers, Nonrestaurant",Male,11
+Secretaries and Administrative Assistants,Male,20
+General and Operations Managers,Male,8
+First-Line Supervisors of Sales Workers,Male,10
+Counter and Rental Clerks and Parts Salespersons,Male,26
+Retail Salespersons,Male,4
+Software Developers and Programmers,Male,8
+"Engineering Technicians, Except Drafters",Male,5

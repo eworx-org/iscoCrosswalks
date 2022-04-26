@@ -1,6 +1,13 @@
-isco_soc_crosswalk <- function(data, indicator = FALSE, soc_lvl = "soc_2") {
+isco_soc_crosswalk <- function(data,
+                               indicator = FALSE,
+                               soc_lvl = "soc_2",
+                               brkd_cols = NULL) {
+
+  mandatory_cols <- c("job", "value")
 
   stopifnot("Unknown soc level" = soc_lvl %in% paste0("soc_", 1:4))
+  stopifnot(mandatory_cols %in% names(data))
+  stopifnot(is.null(brkd_cols) || isTRUE(brkd_cols %in% names(data)))
 
   if (!all(data[, job] %in% isco[, preferredLabel]))
     stop(paste0("There are job labels that not exist in ISCO."))
@@ -23,13 +30,13 @@ isco_soc_crosswalk <- function(data, indicator = FALSE, soc_lvl = "soc_2") {
   )
 
   if(isFALSE(indicator)) {
-    cross_data[, count_leaves := .N, by = "code"]
+    cross_data[, count_leaves := .N, by = c(brkd_cols, "code")]
     cross_data[, value := value / count_leaves]
-    cross_data <-
-      cross_data[, .(value = sum(value, na.rm = TRUE)), by = "soc10"]
+    cross_data <- cross_data[, .(value = sum(value, na.rm = TRUE)),
+                             by = c(brkd_cols, "soc10")]
   } else {
-    cross_data <-
-      cross_data[, .(value = mean(value, na.rm = TRUE)), by = "soc10"]
+    cross_data <- cross_data[, .(value = mean(value, na.rm = TRUE)),
+                             by = c(brkd_cols, "soc10")]
   }
 
   switch (soc_lvl,
@@ -39,18 +46,18 @@ isco_soc_crosswalk <- function(data, indicator = FALSE, soc_lvl = "soc_2") {
   )
 
   if(isFALSE(indicator)) {
-    cross_data <-
-      cross_data[, .(value = sum(value, na.rm = TRUE)), by = "soc10"]
+    cross_data <- cross_data[, .(value = sum(value, na.rm = TRUE)),
+                             by = c(brkd_cols, "soc10")]
   } else {
-    cross_data <-
-      cross_data[, .(value = mean(value, na.rm = TRUE)), by = "soc10"]
+    cross_data <- cross_data[, .(value = mean(value, na.rm = TRUE)),
+                             by = c(brkd_cols, "soc10")]
   }
 
   soc_code_label <-
     soc_groups[!is.na(get(soc_lvl)), .(soc10 = get(soc_lvl), soc_label)]
 
   merge(cross_data, soc_code_label, all.x = TRUE)[
-    , .(soc10, soc_label, value)][
+    , c("soc10", "soc_label", brkd_cols, "value"), with = FALSE][
       order(-value)]
 
 }

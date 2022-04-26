@@ -1,3 +1,4 @@
 library(testthat)
+library(crosswalkR)
 
-test_dir("tests/testthat")
+test_check("crosswalkR")
