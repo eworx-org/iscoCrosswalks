@@ -2,15 +2,18 @@
 % Please edit documentation in R/get_isco_code.R
 \name{get_isco_code}
 \alias{get_isco_code}
-\title{Get ISCO code from label}
+\title{Get ISCO code}
 \usage{
 get_isco_code(data, lvl = 3)
 }
 \arguments{
-\item{data, }{data.frame or data.table with two columns \code{job} and \code{value}}
+\item{data, }{data.frame or data.table with a column named as \code{job}}
 
 \item{lvl, }{numeric value indicating the ISCO taxonomy}
 }
+\value{
+data.frame of input data with one extra column named as \code{code}
+}
 \description{
-Adds ISCO code for a particular job title
+Adds column of ISCO code for a particular job title.
 }

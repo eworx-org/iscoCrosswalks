@@ -1,5 +1,5 @@
-Package: crosswalkR
-Title: Methods and classes for crosswalks between the ESCO, O*NET and Canadian NOC classifications of occupations
+Package: iscoCrosswalks
+Title: Methods and classes for crosswalks between the ISCO, and SOC classifications of occupations
 Version: 0.0.0.9000
 Authors@R: c(
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),

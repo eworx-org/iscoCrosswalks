@@ -1,4 +1,3 @@
 library(testthat)
-library(crosswalkR)
 
-test_check("crosswalkR")
+test_check("iscoCrosswalks")

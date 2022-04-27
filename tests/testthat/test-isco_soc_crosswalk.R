@@ -55,7 +55,9 @@ test_that("ISCO_3 to SOC_1 with brkdwn  crosswalk for indicators is OK!", {
 })
 
 test_that("ISCO_1 to SOC_1 with brkdwn crosswalk is OK!", {
-  soc_estimate <- isco_soc_crosswalk(isco_1_brkdwn, soc_lvl = "soc_1",
+  soc_estimate <- isco_soc_crosswalk(isco_1_brkdwn,
+                                     isco_lvl = 1,
+                                     soc_lvl = "soc_1",
                                      brkd_cols = "gender")
   expect_equal(isco_1_brkdwn[, sum(value)],
                soc_estimate[, sum(value)])
