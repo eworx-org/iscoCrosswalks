@@ -2,3 +2,5 @@
 crosswalkR.Rproj
 docs
 inst/doc
+data-raw/europass_survey_custom_data.csv
+data-raw/soc_data.csv

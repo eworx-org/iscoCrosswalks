@@ -1,10 +1,16 @@
-#' Get ISCO code from label
+#' Get ISCO code
 #'
-#' Adds ISCO code for a particular job title
+#' Adds column of ISCO code for a particular job title.
+#'
 #' @param data, data.frame or data.table with a column named as `job`
 #' @param lvl, numeric value indicating the ISCO taxonomy
 #'
+#' @return data.frame of input data with one extra column named as `code`
+#'
 get_isco_code <- function(data, lvl = 3) {
+
+  code <- NULL
+  isco <- isco
 
   stopifnot("job" %in% names(data))
   stopifnot(is.data.table(data))
