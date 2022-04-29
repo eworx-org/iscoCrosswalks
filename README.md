@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/eworx-org/crosswalkR/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/crosswalkR/actions)
 <!-- badges: end -->
 
-The goal of crosswalkR is to ...
+The goal of crosswalkR is to map aggregation data or indicators from SOC classification to ISCO.
 
 ## Installation
 
@@ -13,7 +13,7 @@ You can install the development version of crosswalkR from [GitHub](https://gith
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("eworx-org/crosswalkR")
+devtools::install_github("eworx-org/iscoCrosswalks")
 ```
 
 ## Example
@@ -21,7 +21,6 @@ devtools::install_github("eworx-org/crosswalkR")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(crosswalkR)
-## basic example code
+library(iscoCrosswalks)
 ```
 
