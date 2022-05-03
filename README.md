@@ -6,9 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of iscoCrosswalks is to map indicators and raw counts from the
-International Standard Classification of Occupations (ISCO) to the
-Standard Occupational Classification (SOC) System, and vice versa.
+The goal of iscoCrosswalks is to map indicators and raw counts (e.g.
+survey data) from the International Standard Classification of
+Occupations (ISCO) to the Standard Occupational Classification (SOC)
+System, and vice versa.
 
 ## Installation
 
