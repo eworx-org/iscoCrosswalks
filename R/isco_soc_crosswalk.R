@@ -31,7 +31,7 @@ isco_soc_crosswalk <- function(data,
   mandatory_cols <- c("job", "value")
 
   stopifnot("Unknown soc level" = soc_lvl %in% paste0("soc_", 1:4))
-  stopifnot("Mandatory cols missing" = all(mandatory_cols %in% names(data)))
+  stopifnot("Mandatory cols job and value are missing" = all(mandatory_cols %in% names(data)))
   stopifnot(is.null(brkd_cols) || isTRUE(all(brkd_cols %in% names(data))))
   stopifnot(between(isco_lvl, 1, 3))
 

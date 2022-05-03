@@ -1,7 +1,8 @@
 library(data.table)
 
 isco <- fread("inst/extdata/ISCOGroups_en.csv", keepLeadingZeros = TRUE)
-isco <- isco[, .(code, preferredLabel = as.factor(preferredLabel))]
+isco <- isco[, .(code = as.character(code),
+                 preferredLabel = as.character(preferredLabel))]
 
 Encoding(levels(isco$preferredLabel)) <- "latin1"
 
