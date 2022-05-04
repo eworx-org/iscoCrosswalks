@@ -1,0 +1,37 @@
+Occupations;ISCO code;Skill;Value
+Associate professionals;3;Foreign language skills;8,21
+Clerks;4;Foreign language skills;8,4
+Elementary workers;9;Foreign language skills;2,65
+Farm and related workers;6;Foreign language skills;1,78
+Managers;1;Foreign language skills;10,1
+Operators and assemblers;8;Foreign language skills;4,17
+Professionals;2;Foreign language skills;11,37
+Service and sales workers;5;Foreign language skills;5,6
+Trades workers;7;Foreign language skills;4,59
+Associate professionals;3;ICT;80,84
+Clerks;4;ICT;80,56
+Elementary workers;9;ICT;17,56
+Farm and related workers;6;ICT;24,59
+Managers;1;ICT;87,5
+Operators and assemblers;8;ICT;27,2
+Professionals;2;ICT;86,28
+Service and sales workers;5;ICT;41,44
+Trades workers;7;ICT;34,8
+Associate professionals;3;Literacy;59,06
+Clerks;4;Literacy;51,51
+Elementary workers;9;Literacy;12,66
+Farm and related workers;6;Literacy;16,7
+Managers;1;Literacy;72,81
+Operators and assemblers;8;Literacy;18,93
+Professionals;2;Literacy;75,31
+Service and sales workers;5;Literacy;29,44
+Trades workers;7;Literacy;23,17
+Associate professionals;3;Numeracy;34,9
+Clerks;4;Numeracy;26,3
+Elementary workers;9;Numeracy;7,2
+Farm and related workers;6;Numeracy;11,75
+Managers;1;Numeracy;49,54
+Operators and assemblers;8;Numeracy;12,9
+Professionals;2;Numeracy;42,48
+Service and sales workers;5;Numeracy;14,25
+Trades workers;7;Numeracy;20,56

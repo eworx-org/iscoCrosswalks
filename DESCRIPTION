@@ -1,12 +1,12 @@
 Package: iscoCrosswalks
 Title: Methods and classes for crosswalks between the ISCO, and SOC classifications of occupations
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: c(
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
     person("Andreas", "Bampouris", email = "aba@eworx.gr", role = "aut")
     )
 Description: Methods and classes for crosswalks between the ESCO, O*NET and Canadian NOC classifications of occupations.
-License: GPL (>= 3)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -18,5 +18,6 @@ Suggests:
 VignetteBuilder: knitr
 Depends: R (>= 3.1.0)
 Imports:
-    data.table
+    data.table,
+    labourR
 Config/testthat/edition: 3
