@@ -14,7 +14,22 @@
 #' @param brkd_cols, character vector with col names of stratification variables
 #' @param indicator, Boolean indicating if data describe an indicator. If `TRUE`
 #' the mean value is computed, otherwise the sum by each breakdown group.
-#'
+#' 
+#' @examples 
+#' library(iscoCrosswalks)
+#' library(data.table)
+#' 
+#' #from ISCO level 3 group to soc_1 occupations
+#' path <- system.file("extdata", "isco_3_brkdwn_example.csv",
+#'                     package = "iscoCrosswalks")
+#' dat <- fread(path)
+#' isco_soc_crosswalk(dat,
+#'                    isco_lvl = 3,
+#'                    soc_lvl = "soc_1",
+#'                    brkd_cols = "gender")
+#' @references
+#' \insertRef{hardy2018educational}{iscoCrosswalks}
+#' 
 #' @export
 isco_soc_crosswalk <- function(data,
                                isco_lvl = 3,

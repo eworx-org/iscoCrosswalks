@@ -6,7 +6,8 @@
 #' @param lvl, string that can take values from `soc_1` up to `soc_4`
 #'
 #' @return data.frame of input data with one extra column named as `code`
-#'
+#' 
+#' @export
 get_soc_code <- function(data, lvl = "soc_3") {
 
   soc_groups <- soc_groups

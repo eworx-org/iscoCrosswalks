@@ -10,15 +10,142 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  fig.height = 2
 )
+library(knitr)
 ```
 
 ```{r setup}
 library(iscoCrosswalks)
+library(data.table)
 ```
 
 # Introduction
 
-This package transforms aggregate statistics to similar taxonomies of
-occupations.
+Eurostat, CEDEFOP, and other EU agencies have been looking into using the ESCO classification to
+link job–worker characteristics like skill importance and level ratings to European jobs. O*NET is a
+reliable source of occupational data for the European labour market because of its strong theoretical
+and empirical basis and the similarities between the European and US economic systems.
+Drawing on O\*NET necessitates mapping from one classification to another since the O\*NET
+database classifies jobs differently than the EU. This is accomplished via a “concordance” (also known
+as a “crosswalk” or “correspondence table”). We propose the a publicly accessible software for
+methodologically transparent concordances, by constructing an R-package that we hope will greatly
+reduce the expenses and time required to perform an approximate mapping between the two
+categorization systems.
+
+ESCO began evaluating several options to tying skills to professions in the EU. The introduction of the
+Skills and Competencies Taxonomy, knowledge descriptors, which provides consistent nomenclature
+and enhances communication of occupational information in the EU, was the first stage in that
+process. One obvious source to consider as we evaluate the various options to utilize the ESCO
+Taxonomy is the US O\*NET system. Indeed, to assess the skills and competencies of different
+segments of the EU labour market, various governmental and non-governmental organizations in the
+EU have built concordances between the US System of Occupational Classification (SOC) and ESCO.
+The problem is that there is no clear one-to-one mapping from the EU ESCO to the US SOC utilized in
+O\*NET for most jobs. As a result, many concordances have concentrated solely on occupations with
+clear one-to-one correspondences. Furthermore, these concordances are frequently proprietary,
+with little information or explanation about how they were created, making them inaccessible to
+others and limiting any critique of the approach adopted.
+
+Understanding the variations in how jobs are organized in the US and the EU is necessary to realize
+the necessity for a more granular concordance. While the SOC and the ESCO have similar goals, there
+are significant distinctions in the organization and information included in occupational profiles. The
+US SOC has 867 6-digit classifications for statistics reporting (e.g., number of people employed or
+average wage). The EU ESCO, on the other hand, employs the ISCO 4-digit categorization, which has
+436 unit groups, and adds an extra layer of information of approximately 3000 occupational
+distinctions. Both systems group occupations according to a four-level hierarchy, with ESCO adding
+an extra degree of detail.
+
+# Crosswalks
+
+We build an algorithm that conducts approximate matching between the ISCO and SOC classifications
+using concordances provided by the Institute for Structural Research and Faculty of Economics,
+University of Warsaw. The crosswalks offer a complete step-by-step mapping of O\*NET data to 
+ISCO88 and ISCO-08 coding using an expanded version of SOC-00 and SOC-10 coding (used for most
+European data, including EU LFS). We propose a mapping method based on the aforementioned
+research that converts measurements to the smallest possible unit of the target taxonomy, and then
+performs an aggregation/estimate to the appropriate degree of detail. In case of raw-count data
+the `sum` by breakdown group is used, else the `mean` value.
+
+## Example (ISCO-SOC)
+
+## Example
+
+This is a basic example which shows you how to translate CEDEFOPs
+"Importance of foundation skills" indicator given in ISCO(2008) to SOC(2010)
+classification:
+
+- For further details visit [CEDEFOPs skills
+intelligence tool](https://www.cedefop.europa.eu/en/tools/skills-intelligence)
+
+```{r example}
+library(iscoCrosswalks)
+```
+
+The percentage of jobs where foundation skills (literacy, numeracy, ICT,
+and foreign languages) are highly crucial for doing the work is shown in this
+indicator. It is based on the findings of Cedefop's European survey of skills
+and jobs.
+
+The Skills Foundation Indicator is exposed also in `iscoCrosswalks` as an
+example data-set. It consists of three variables
+
+- `Occupations`
+- `Skill`
+- `Value`
+
+To perform the transformation, we've added a third column with the
+`preferredLabel` from the ISCO taxonomy. In the R terminal, type `isco` to
+access the desired labels. Manual entry of preferred labels is suggested for
+small data. See also the R package
+[labourR](https://cran.r-project.org/web/packages/labourR) for automating the
+occupations coding, in case of big data-sets.
+
+Inspecting the indicator,
+
+```{r}
+kable(foundation_skills[seq(1 , nrow(foundation_skills), by = 5), ])
+```
+
+To translate the indicator to SOC classification, `iscoCrosswalks` has two
+mandatory column names. Namely, `job` and `value` standing for the preferred
+labels of the taxonomy and the value of the indicator respectively. 
+
+Thus, we rename `preferredLabel` to `job`, and `Value` to `value`.
+
+```{r}
+data.table::setnames(foundation_skills,
+                     c("preferredLabel", "Value"),
+                     c("job", "value"))
+```
+
+The `isco_soc_crosswalk()` function can translate the values to the desired
+taxonomy. The parameter `brkd_cols` accepts a vector that indicates
+other columns used for grouping. 
+
+Also, since this is a composite score we set `indicator = TRUE` to use `mean`
+value. Instead, if raw counts are given then we set `indicator = FALSE` to
+aggregate the units of the hierarchy.
+
+```{r}
+soc_foundation_skills <- isco_soc_crosswalk(foundation_skills,
+                                            brkd_cols = "Skill",
+                                            isco_lvl = 1,
+                                            soc_lvl = "soc_1",
+                                            indicator = TRUE)
+```
+
+In the following table we visualize the top 6 occupations by Skill, of the
+projected indicator to the SOC taxonomy.
+
+```{r}
+soc_foundation_skills[, Occupations := gsub(" Occupations", "", soc_label)]
+soc_foundation_skills[, Skill := gsub(" skills", "", Skill)]
+dat <- soc_foundation_skills[order(Skill, -value)][, head(.SD, 6), by = "Skill"]
+kable(dat)
+```
+
+If the reverse process is required, use the `soc_isco_crosswalk()` function. The
+preffered labels of the taxonomy can be inspected in the included dataset 
+`soc_groups`.
