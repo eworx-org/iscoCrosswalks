@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/eworx-org/crosswalkR/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/crosswalkR/actions)
+[![R-CMD-check](https://github.com/eworx-org/iscoCrosswalks/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/iscoCrosswalks/actions)
 <!-- badges: end -->
 
 The goal of iscoCrosswalks is to map indicators and raw counts from the
@@ -19,7 +19,7 @@ You can install the development version of iscoCrosswalks from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("eworx-org/crosswalkR")
+devtools::install_github("eworx-org/iscoCrosswalks")
 ```
 
 ## Example

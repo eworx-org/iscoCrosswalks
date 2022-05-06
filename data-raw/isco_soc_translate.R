@@ -1,4 +1,4 @@
-library(crosswalkR)
+library(iscoCrosswalks)
 library(data.table)
 
 isco_data <- fread("data-raw/europass_survey_custom_data.csv")
