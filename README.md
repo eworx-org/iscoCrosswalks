@@ -1,15 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# iscoCrosswalks
+# iscoCrosswalks <a href="http://eworx-org.github.io/iscoCrosswalks/" rel="nofollow"><img src='man/figures/logo.svg' align="right" height="130"/></a>
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/eworx-org/crosswalkR/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/crosswalkR/actions)
 <!-- badges: end -->
 
-The goal of iscoCrosswalks is to map indicators and raw counts (e.g.
-survey data) from the International Standard Classification of
-Occupations (ISCO) to the Standard Occupational Classification (SOC)
-System, and vice versa.
+The goal of iscoCrosswalks is to map indicators and raw counts from the
+International Standard Classification of Occupations (ISCO) to the
+Standard Occupational Classification (SOC) System, and vice versa.
 
 ## Installation
 
@@ -34,12 +35,12 @@ SOC(2010) classification:
 library(iscoCrosswalks)
 ```
 
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
 The percentage of jobs where foundation skills (literacy, numeracy, ICT,
 and foreign languages) are highly crucial for doing the work is shown in
-this indicator. Estimates are based on the findings of Cedefop’s European
-survey of skills and jobs.
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+this indicator. It is based on the findings of Cedefop’s European survey
+of skills and jobs.
 
 The Skills Foundation Indicator is exposed also in `iscoCrosswalks` as
 an example data-set. It consists of three variables
@@ -48,12 +49,11 @@ an example data-set. It consists of three variables
 -   `Skill`
 -   `Value`
 
-To perform the ISCO-SOC transformation, we’ve added a third column with the
+To perform the transformation, we’ve added a third column with the
 `preferredLabel` from the ISCO taxonomy. In the R terminal, type `isco`
 to access the desired labels. Manual entry of preferred labels is
-suggested for small data. 
-
-See also the R package [labourR](https://cran.r-project.org/web/packages/labourR) for
+suggested for small data. See also the R package
+[labourR](https://cran.r-project.org/web/packages/labourR) for
 automating the occupations coding, in case of big data-sets.
 
 Inspecting the indicator,
@@ -73,13 +73,12 @@ knitr::kable(foundation_skills[seq(1 , nrow(foundation_skills), by = 5), ])
 | Operators and assemblers | Plant and machine operators and assemblers         | Literacy         | 18.93 |
 | Elementary workers       | Elementary occupations                             | Numeracy         |  7.20 |
 
-To translate the indicator to SOC classification, `iscoCrosswalks` needs
+To translate the indicator to SOC classification, `iscoCrosswalks` has
 two mandatory column names. Namely, `job` and `value` standing for the
 preferred labels of the taxonomy and the value of the indicator
 respectively.
 
-In our example we should rename `preferredLabel` to `job`, and
-`Value` to `value`.
+Thus, we rename `preferredLabel` to `job`, and `Value` to `value`.
 
 ``` r
 data.table::setnames(foundation_skills,
@@ -87,14 +86,13 @@ data.table::setnames(foundation_skills,
                      c("job", "value"))
 ```
 
-Using the `isco_soc_crosswalk()` function we can translate the
-values to the desired taxonomy. The parameter `brkd_cols` accepts a
-vector that indicates other columns used for grouping.
+The `isco_soc_crosswalk()` function can translate the values to the
+desired taxonomy. The parameter `brkd_cols` accepts a vector that
+indicates other columns used for grouping.
 
-Since this is a composite score we set `indicator = TRUE` to use
-`mean` value of the taxonomys units. If raw counts are given then
-we set `indicator = FALSE` to aggregate to the desired hierarchical
-level.
+Also, since this is a composite score we set `indicator = TRUE` to use
+`mean` value. Instead, if raw counts are given then we set
+`indicator = FALSE` to aggregate the units of the hierarchy.
 
 ``` r
 soc_foundation_skills <- isco_soc_crosswalk(foundation_skills,
@@ -110,4 +108,5 @@ projected indicator to the SOC taxonomy.
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 If the reverse process is required, use the `soc_isco_crosswalk()`
-function.
+function. The preffered labels of the taxonomy can be inspected in the
+included dataset `soc_groups`.

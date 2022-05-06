@@ -15,6 +15,20 @@
 #' @param indicator, Boolean indicating if data describe an indicator. If `TRUE`
 #' the mean value is computed, otherwise the sum by each breakdown group.
 #'
+#' @examples 
+#' library(iscoCrosswalks)
+#' library(data.table)
+#' #from soc_3 group to ISCO level 1 occupations
+#' path <- system.file("extdata", "soc_3_brkdwn_example.csv",
+#'                     package = "iscoCrosswalks")
+#' dat <- fread(path)
+#' soc_isco_crosswalk(dat,
+#'                    soc_lvl = "soc_3",
+#'                    isco_lvl = 1,
+#'                    brkd_cols = "gender")
+#' @references
+#' \insertRef{hardy2018educational}{iscoCrosswalks}
+#'
 #' @export
 soc_isco_crosswalk <- function(data,
                                soc_lvl,

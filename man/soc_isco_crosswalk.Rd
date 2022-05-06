@@ -33,3 +33,18 @@ may appear in numerous ISCOs (or vice versa), the match in some of these
 instances is just coincidental and adds unneeded complexity. This function
 allows mapping of data from the 4 SOC groups to the 4 ISCO levels.
 }
+\examples{
+library(iscoCrosswalks)
+library(data.table)
+#from soc_3 group to ISCO level 1 occupations
+path <- system.file("extdata", "soc_3_brkdwn_example.csv",
+                    package = "iscoCrosswalks")
+dat <- fread(path)
+soc_isco_crosswalk(dat,
+                   soc_lvl = "soc_3",
+                   isco_lvl = 1,
+                   brkd_cols = "gender")
+}
+\references{
+\insertRef{hardy2018educational}{iscoCrosswalks}
+}
