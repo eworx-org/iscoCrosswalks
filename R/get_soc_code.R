@@ -7,7 +7,16 @@
 #' @param lvl Character string taking values between `soc_1` and `soc_4`.
 #'
 #' @return data.frame of input data with one extra column named as `code`
+#' @examples
+#' library(iscoCrosswalks)
+#' library(data.table)
 #' 
+#' # add mandatory column
+#' path <- system.file("extdata", "soc_3_example.csv", 
+#'                     package = "iscoCrosswalks")
+#' dat <- fread(path)
+#' res <- get_soc_code(dat, lvl = "soc_3")
+#' head(res[, .(code, Skill, Value)])
 #' @export
 get_soc_code <- function(data, lvl = "soc_3") {
 
