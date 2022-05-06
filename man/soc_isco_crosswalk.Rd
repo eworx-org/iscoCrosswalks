@@ -13,15 +13,15 @@ soc_isco_crosswalk(
 )
 }
 \arguments{
-\item{data, }{data.table with mandatory columns \code{job} and \code{value}}
+\item{data}{data.table with mandatory columns \code{job} and \code{value}.}
 
-\item{soc_lvl, }{character taking values from \code{soc_1} to \code{soc_4}}
+\item{soc_lvl}{Character string taking values between \code{soc_1} and \code{soc_4}.}
 
-\item{isco_lvl, }{numeric between 1 and 4}
+\item{isco_lvl}{Integer between 1 and 4.}
 
-\item{brkd_cols, }{character vector with col names of stratification variables}
+\item{brkd_cols}{Character vector with column names of stratification variables.}
 
-\item{indicator, }{Boolean indicating if data describe an indicator. If \code{TRUE}
+\item{indicator}{Boolean indicating if column \code{value} of \code{data} consists of indicator values. If \code{TRUE}
 the mean value is computed, otherwise the sum by each breakdown group.}
 }
 \value{
@@ -40,6 +40,7 @@ allows mapping of data from the 4 SOC groups to the 4 ISCO levels.
 \examples{
 library(iscoCrosswalks)
 library(data.table)
+
 #from soc_3 group to ISCO level 1 occupations
 path <- system.file("extdata", "soc_3_brkdwn_example.csv",
                     package = "iscoCrosswalks")

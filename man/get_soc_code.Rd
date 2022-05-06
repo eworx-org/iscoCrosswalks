@@ -7,13 +7,14 @@
 get_soc_code(data, lvl = "soc_3")
 }
 \arguments{
-\item{data, }{data.frame or data.table with two columns \code{job} and \code{value}}
+\item{data}{data.table with mandatory column \code{job}.}
 
-\item{lvl, }{string that can take values from \code{soc_1} up to \code{soc_4}}
+\item{lvl}{Character string taking values between \code{soc_1} and \code{soc_4}.}
 }
 \value{
 data.frame of input data with one extra column named as \code{code}
 }
 \description{
-Adds SOC code for a particular job title.
+Adds column of SOC code for a particular job title. Job titles should be
+given with the labels defined by SOC.
 }

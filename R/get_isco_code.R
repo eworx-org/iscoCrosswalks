@@ -1,14 +1,16 @@
-#' Get ISCO code
+#' Get ISCO code from label
 #'
 #' Adds column of ISCO code for a particular job title. Job titles should be
 #' given in the preferred label of the ISCO classification.
 #'
-#' @param data, data.table with a column named as `job`
-#' @param lvl, numeric value indicating the ISCO taxonomy
+#' @param data data.table with mandatory column `job`.
+#' @param lvl Integer value between 1 and 4 indicating the level of the ISCO hierarchy.
 #'
 #' @return data.table of input data with one extra column named as `code`
 #' @examples
 #' library(iscoCrosswalks)
+#' library(data.table)
+#' 
 #' # add mandatory column
 #' dat <- foundation_skills[, .(job = preferredLabel, Skill, Value)]
 #' res <- get_isco_code(dat, lvl = 1)
