@@ -11,5 +11,5 @@
 #'   \item{isco_label}{Labels of ISCO 4th level}
 #'   \item{soc_label}{Labels of SOC detailed occupations}
 #' }
-#' @source \url{https://ibs.org.pl/en}
+#' @source \url{https://ibs.org.pl}
 "soc10_isco08"

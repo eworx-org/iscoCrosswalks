@@ -8,3 +8,8 @@
 ^\.github$
 ^README\.Rmd$
 ^iscoCrosswalks.Rproj$
+^crosswalkR.Rproj$
+^cran-comments\.md$
+^LICENSE\.md$
+^CRAN-RELEASE$
+^\.github$

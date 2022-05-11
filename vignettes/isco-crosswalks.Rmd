@@ -24,7 +24,7 @@ library(data.table)
 
 # Introduction
 
-Eurostat, CEDEFOP, and other EU agencies have been looking into using the ESCO classification to
+Eurostat, CEDEFOP, and other EU agencies have been looking into using the ISCO classification to
 link job–worker characteristics like skill importance and level ratings to European jobs. O*NET is a
 reliable source of occupational data for the European labour market because of its strong theoretical
 and empirical basis and the similarities between the European and US economic systems.
@@ -35,38 +35,27 @@ methodologically transparent concordances, by constructing an R-package that we 
 reduce the expenses and time required to perform an approximate mapping between the two
 categorization systems.
 
-ESCO began evaluating several options to tying skills to professions in the EU. The introduction of the
-Skills and Competencies Taxonomy, knowledge descriptors, which provides consistent nomenclature
-and enhances communication of occupational information in the EU, was the first stage in that
-process. One obvious source to consider as we evaluate the various options to utilize the ESCO
-Taxonomy is the US O\*NET system. Indeed, to assess the skills and competencies of different
-segments of the EU labour market, various governmental and non-governmental organizations in the
-EU have built concordances between the US System of Occupational Classification (SOC) and ESCO.
-The problem is that there is no clear one-to-one mapping from the EU ESCO to the US SOC utilized in
-O\*NET for most jobs. As a result, many concordances have concentrated solely on occupations with
-clear one-to-one correspondences. Furthermore, these concordances are frequently proprietary,
-with little information or explanation about how they were created, making them inaccessible to
-others and limiting any critique of the approach adopted.
-
 Understanding the variations in how jobs are organized in the US and the EU is necessary to realize
-the necessity for a more granular concordance. While the SOC and the ESCO have similar goals, there
+the necessity for a more granular concordance. While the SOC and the ISCO have similar goals, there
 are significant distinctions in the organization and information included in occupational profiles. The
 US SOC has 867 6-digit classifications for statistics reporting (e.g., number of people employed or
-average wage). The EU ESCO, on the other hand, employs the ISCO 4-digit categorization, which has
+average wage). The EU ISCO, on the other hand, employs the ISCO 4-digit categorization, which has
 436 unit groups, and adds an extra layer of information of approximately 3000 occupational
-distinctions. Both systems group occupations according to a four-level hierarchy, with ESCO adding
+distinctions. Both systems group occupations according to a four-level hierarchy, with ISCO adding
 an extra degree of detail.
 
 # Crosswalks
 
-We build an algorithm that conducts approximate matching between the ISCO and SOC classifications
-using concordances provided by the Institute for Structural Research and Faculty of Economics,
-University of Warsaw. The crosswalks offer a complete step-by-step mapping of O\*NET data to 
-ISCO88 and ISCO-08 coding using an expanded version of SOC-00 and SOC-10 coding (used for most
-European data, including EU LFS). We propose a mapping method based on the aforementioned
-research that converts measurements to the smallest possible unit of the target taxonomy, and then
-performs an aggregation/estimate to the appropriate degree of detail. In case of raw-count data
-the `sum` by breakdown group is used, else the `mean` value.
+This package introduces an alogithm that conducts approximate matching between the ISCO
+and SOC classifications using concordances provided by the Institute for Structural
+Research and Faculty of Economics, University of Warsaw. The crosswalks offer a complete
+step-by-step mapping of O\*NET data to ISCO88 and ISCO-08 coding using an expanded version
+of SOC-00 and SOC-10 coding. We propose a mapping method based on the aforementioned research
+that converts measurements to the smallest possible unit of the target taxonomy, and then
+performs an aggregation/estimate to the appropriate degree of detail.
+
+> "In case of raw-count data the `sum` by occupation group is used, else for composite
+indicators the `mean` value is used by each occupational group of the target hierarchical level."
 
 ## Example (ISCO-SOC)
 

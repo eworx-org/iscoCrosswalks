@@ -1,5 +1,5 @@
 Package: iscoCrosswalks
-Title: Methods and classes for crosswalks between the ISCO, and SOC classifications of occupations
+Title: Crosswalks Between the ISCO, and SOC Classifications of Occupations
 Version: 1.0.0
 Authors@R: c(
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
@@ -10,6 +10,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
+URL: https://github.com/eworx-org/iscoCrosswalks
+BugReports: https://github.com/eworx-org/iscoCrosswalks/issues
 RoxygenNote: 7.1.2
 Suggests:
     knitr,
