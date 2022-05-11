@@ -10,6 +10,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
+URL: https://github.com/eworx-org/iscoCrosswalks
+BugReports: https://github.com/eworx-org/iscoCrosswalks/issues
 RoxygenNote: 7.1.2
 Suggests:
     knitr,
