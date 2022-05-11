@@ -53,8 +53,8 @@ To perform the transformation, we’ve added a third column with the
 `preferredLabel` from the ISCO taxonomy. In the R terminal, type `isco`
 to access the desired labels. Manual entry of preferred labels is
 suggested for small data. See also the R package
-[labourR](https://cran.r-project.org/web/packages/labourR/) for
-automating the occupations coding, in case of big data-sets.
+[labourR](https://cran.r-project.org/package=labourR) for automating the
+occupations coding, in case of big data-sets.
 
 Inspecting the indicator,
 

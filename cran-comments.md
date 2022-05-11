@@ -15,3 +15,9 @@ Fixing some redirects
 Moving link to canonical CRAN package url
 
 - https://CRAN.R-project.org/package=labourR
+
+## This is a re-submission
+
+Update link in README.md
+
+- https://cran.r-project.org/web/packages/labourR/ -> https://CRAN.R-project.org/package=labourR
