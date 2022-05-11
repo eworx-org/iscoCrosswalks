@@ -1,3 +1,11 @@
 ## R CMD check results
 
 There were no ERRORs or WARNINGs or NOTEs.
+
+## This is a re-submission
+
+Fixing some redirects
+
+- http://eworx-org.github.io/iscoCrosswalks/ changed to https://eworx-org.github.io/iscoCrosswalks/
+
+- https://cran.r-project.org/web/packages/labourR changed to https://cran.r-project.org/web/packages/labourR/
