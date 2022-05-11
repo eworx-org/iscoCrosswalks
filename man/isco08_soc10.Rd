@@ -14,7 +14,7 @@ A table with the following colums.
 }
 }
 \source{
-\url{https://ibs.org.pl/en}
+\url{https://ibs.org.pl}
 }
 \usage{
 isco08_soc10

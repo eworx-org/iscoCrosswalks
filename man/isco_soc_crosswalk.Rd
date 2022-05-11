@@ -45,6 +45,7 @@ isco_soc_crosswalk(dat,
                    isco_lvl = 3,
                    soc_lvl = "soc_1",
                    brkd_cols = "gender")
+
 }
 \references{
 \insertRef{hardy2018educational}{iscoCrosswalks}
