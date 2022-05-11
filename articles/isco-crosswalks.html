@@ -59,7 +59,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/eworx-org/iscoCrosswalks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -73,26 +80,28 @@
       <img src="../logo.svg" class="logo" alt=""><h1>isco-crosswalks</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/eworx-org/iscoCrosswalks/blob/HEAD/vignettes/isco-crosswalks.Rmd" class="external-link"><code>vignettes/isco-crosswalks.Rmd</code></a></small>
       <div class="d-none name"><code>isco-crosswalks.Rmd</code></div>
     </div>
 
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">iscoCrosswalks</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/eworx-org/iscoCrosswalks" class="external-link">iscoCrosswalks</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></code></pre></div>
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p>Eurostat, CEDEFOP, and other EU agencies have been looking into using the ESCO classification to link job–worker characteristics like skill importance and level ratings to European jobs. O*NET is a reliable source of occupational data for the European labour market because of its strong theoretical and empirical basis and the similarities between the European and US economic systems. Drawing on O*NET necessitates mapping from one classification to another since the O*NET database classifies jobs differently than the EU. This is accomplished via a “concordance” (also known as a “crosswalk” or “correspondence table”). We propose the a publicly accessible software for methodologically transparent concordances, by constructing an R-package that we hope will greatly reduce the expenses and time required to perform an approximate mapping between the two categorization systems.</p>
-<p>ESCO began evaluating several options to tying skills to professions in the EU. The introduction of the Skills and Competencies Taxonomy, knowledge descriptors, which provides consistent nomenclature and enhances communication of occupational information in the EU, was the first stage in that process. One obvious source to consider as we evaluate the various options to utilize the ESCO Taxonomy is the US O*NET system. Indeed, to assess the skills and competencies of different segments of the EU labour market, various governmental and non-governmental organizations in the EU have built concordances between the US System of Occupational Classification (SOC) and ESCO. The problem is that there is no clear one-to-one mapping from the EU ESCO to the US SOC utilized in O*NET for most jobs. As a result, many concordances have concentrated solely on occupations with clear one-to-one correspondences. Furthermore, these concordances are frequently proprietary, with little information or explanation about how they were created, making them inaccessible to others and limiting any critique of the approach adopted.</p>
-<p>Understanding the variations in how jobs are organized in the US and the EU is necessary to realize the necessity for a more granular concordance. While the SOC and the ESCO have similar goals, there are significant distinctions in the organization and information included in occupational profiles. The US SOC has 867 6-digit classifications for statistics reporting (e.g., number of people employed or average wage). The EU ESCO, on the other hand, employs the ISCO 4-digit categorization, which has 436 unit groups, and adds an extra layer of information of approximately 3000 occupational distinctions. Both systems group occupations according to a four-level hierarchy, with ESCO adding an extra degree of detail.</p>
+<p>Eurostat, CEDEFOP, and other EU agencies have been looking into using the ISCO classification to link job–worker characteristics like skill importance and level ratings to European jobs. O*NET is a reliable source of occupational data for the European labour market because of its strong theoretical and empirical basis and the similarities between the European and US economic systems. Drawing on O*NET necessitates mapping from one classification to another since the O*NET database classifies jobs differently than the EU. This is accomplished via a “concordance” (also known as a “crosswalk” or “correspondence table”). We propose the a publicly accessible software for methodologically transparent concordances, by constructing an R-package that we hope will greatly reduce the expenses and time required to perform an approximate mapping between the two categorization systems.</p>
+<p>Understanding the variations in how jobs are organized in the US and the EU is necessary to realize the necessity for a more granular concordance. While the SOC and the ISCO have similar goals, there are significant distinctions in the organization and information included in occupational profiles. The US SOC has 867 6-digit classifications for statistics reporting (e.g., number of people employed or average wage). The EU ISCO, on the other hand, employs the ISCO 4-digit categorization, which has 436 unit groups, and adds an extra layer of information of approximately 3000 occupational distinctions. Both systems group occupations according to a four-level hierarchy, with ISCO adding an extra degree of detail.</p>
 </div>
 <div class="section level2">
 <h2 id="crosswalks">Crosswalks<a class="anchor" aria-label="anchor" href="#crosswalks"></a>
 </h2>
-<p>We build an algorithm that conducts approximate matching between the ISCO and SOC classifications using concordances provided by the Institute for Structural Research and Faculty of Economics, University of Warsaw. The crosswalks offer a complete step-by-step mapping of O*NET data to ISCO88 and ISCO-08 coding using an expanded version of SOC-00 and SOC-10 coding (used for most European data, including EU LFS). We propose a mapping method based on the aforementioned research that converts measurements to the smallest possible unit of the target taxonomy, and then performs an aggregation/estimate to the appropriate degree of detail. In case of raw-count data the <code>sum</code> by breakdown group is used, else the <code>mean</code> value.</p>
+<p>This package introduces an alogithm that conducts approximate matching between the ISCO and SOC classifications using concordances provided by the Institute for Structural Research and Faculty of Economics, University of Warsaw. The crosswalks offer a complete step-by-step mapping of O*NET data to ISCO88 and ISCO-08 coding using an expanded version of SOC-00 and SOC-10 coding. We propose a mapping method based on the aforementioned research that converts measurements to the smallest possible unit of the target taxonomy, and then performs an aggregation/estimate to the appropriate degree of detail.</p>
+<blockquote>
+<p>“In case of raw-count data the <code>sum</code> by occupation group is used, else for composite indicators the <code>mean</code> value is used by each occupational group of the target hierarchical level.”</p>
+</blockquote>
 <div class="section level3">
 <h3 id="example-isco-soc">Example (ISCO-SOC)<a class="anchor" aria-label="anchor" href="#example-isco-soc"></a>
 </h3>
@@ -106,7 +115,7 @@
 </li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">iscoCrosswalks</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/eworx-org/iscoCrosswalks" class="external-link">iscoCrosswalks</a></span><span class="op">)</span></code></pre></div>
 <p>The percentage of jobs where foundation skills (literacy, numeracy, ICT, and foreign languages) are highly crucial for doing the work is shown in this indicator. It is based on the findings of Cedefop’s European survey of skills and jobs.</p>
 <p>The Skills Foundation Indicator is exposed also in <code>iscoCrosswalks</code> as an example data-set. It consists of three variables</p>
 <ul>
