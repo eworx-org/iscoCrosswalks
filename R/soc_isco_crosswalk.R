@@ -14,6 +14,9 @@
 #' @param brkd_cols, character vector with col names of stratification variables
 #' @param indicator, Boolean indicating if data describe an indicator. If `TRUE`
 #' the mean value is computed, otherwise the sum by each breakdown group.
+#' 
+#' @returns `data.table` with the estimated values for the requested ISCO
+#' occupational level.
 #'
 #' @examples 
 #' library(iscoCrosswalks)
