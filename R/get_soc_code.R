@@ -1,12 +1,22 @@
 #' Get SOC code from label
 #'
-#' Adds SOC code for a particular job title.
+#' Adds column of SOC code for a particular job title. Job titles should be
+#' given with the labels defined by SOC.
 #'
-#' @param data, data.frame or data.table with two columns `job` and `value`
-#' @param lvl, string that can take values from `soc_1` up to `soc_4`
+#' @param data data.table with mandatory column `job`.
+#' @param lvl Character string taking values between `soc_1` and `soc_4`.
 #'
 #' @return data.frame of input data with one extra column named as `code`
+#' @examples
+#' library(iscoCrosswalks)
+#' library(data.table)
 #' 
+#' # add mandatory column
+#' path <- system.file("extdata", "soc_3_example.csv", 
+#'                     package = "iscoCrosswalks")
+#' dat <- fread(path)
+#' res <- get_soc_code(dat, lvl = "soc_3")
+#' head(res[, .(code, value)])
 #' @export
 get_soc_code <- function(data, lvl = "soc_3") {
 

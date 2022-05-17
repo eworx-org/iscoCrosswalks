@@ -8,11 +8,11 @@
 #' instances is just coincidental and adds unneeded complexity. This function
 #' allows mapping of data from the top 3 ISCO levels to the 4 SOC groups.
 #'
-#' @param data, data.table with mandatory columns `job` and `value`
-#' @param soc_lvl, character taking values from `soc_1` to `soc_4`
-#' @param isco_lvl, numeric between 1 and 3
-#' @param brkd_cols, character vector with col names of stratification variables
-#' @param indicator, Boolean indicating if data describe an indicator. If `TRUE`
+#' @param data data.table with mandatory columns `job` and `value`.
+#' @param soc_lvl Character string taking values between `soc_1` and `soc_4`.
+#' @param isco_lvl Integer value between 1 and 4 indicating the level of the ISCO hierarchy.
+#' @param brkd_cols Character vector with column names of stratification variables.
+#' @param indicator Boolean indicating if column `value` of `data` consists of indicator values. If `TRUE`.
 #' the mean value is computed, otherwise the sum by each breakdown group.
 #' 
 #' @returns `data.table` with the estimated values for the requested SOC

@@ -2,14 +2,14 @@
 % Please edit documentation in R/get_isco_code.R
 \name{get_isco_code}
 \alias{get_isco_code}
-\title{Get ISCO code}
+\title{Get ISCO code from label}
 \usage{
 get_isco_code(data, lvl = 3)
 }
 \arguments{
-\item{data, }{data.table with a column named as \code{job}}
+\item{data}{data.table with mandatory column \code{job}.}
 
-\item{lvl, }{numeric value indicating the ISCO taxonomy}
+\item{lvl}{Integer value between 1 and 4 indicating the level of the ISCO hierarchy.}
 }
 \value{
 data.table of input data with one extra column named as \code{code}
@@ -20,6 +20,8 @@ given in the preferred label of the ISCO classification.
 }
 \examples{
 library(iscoCrosswalks)
+library(data.table)
+
 # add mandatory column
 dat <- foundation_skills[, .(job = preferredLabel, Skill, Value)]
 res <- get_isco_code(dat, lvl = 1)

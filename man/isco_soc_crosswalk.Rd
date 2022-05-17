@@ -13,15 +13,15 @@ isco_soc_crosswalk(
 )
 }
 \arguments{
-\item{data, }{data.table with mandatory columns \code{job} and \code{value}}
+\item{data}{data.table with mandatory columns \code{job} and \code{value}.}
 
-\item{isco_lvl, }{numeric between 1 and 3}
+\item{isco_lvl}{Integer value between 1 and 4 indicating the level of the ISCO hierarchy.}
 
-\item{soc_lvl, }{character taking values from \code{soc_1} to \code{soc_4}}
+\item{soc_lvl}{Character string taking values between \code{soc_1} and \code{soc_4}.}
 
-\item{brkd_cols, }{character vector with col names of stratification variables}
+\item{brkd_cols}{Character vector with column names of stratification variables.}
 
-\item{indicator, }{Boolean indicating if data describe an indicator. If \code{TRUE}
+\item{indicator}{Boolean indicating if column \code{value} of \code{data} consists of indicator values. If \code{TRUE}.
 the mean value is computed, otherwise the sum by each breakdown group.}
 }
 \value{
