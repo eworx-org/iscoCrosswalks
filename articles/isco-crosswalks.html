@@ -123,7 +123,7 @@
 <li><code>Skill</code></li>
 <li><code>Value</code></li>
 </ul>
-<p>To perform the transformation, we’ve added a third column with the <code>preferredLabel</code> from the ISCO taxonomy. In the R terminal, type <code>isco</code> to access the desired labels. Manual entry of preferred labels is suggested for small data. See also the R package <a href="https://cran.r-project.org/web/packages/labourR" class="external-link">labourR</a> for automating the occupations coding, in case of big data-sets.</p>
+<p>To perform the transformation, we’ve added a third column with the <code>preferredLabel</code> from the ISCO taxonomy. In the R terminal, type <code>isco</code> to access the desired labels. Manual entry of preferred labels is suggested for small data. See also the R package <a href="https://cran.r-project.org/package=labourR" class="external-link">labourR</a> for automating the occupations coding, in case of big data-sets.</p>
 <p>Inspecting the indicator,</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">kable</span><span class="op">(</span><span class="va">foundation_skills</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1</span> , <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">foundation_skills</span><span class="op">)</span>, by <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>, <span class="op">]</span><span class="op">)</span></code></pre></div>
