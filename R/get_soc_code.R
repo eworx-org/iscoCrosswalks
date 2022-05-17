@@ -16,7 +16,7 @@
 #'                     package = "iscoCrosswalks")
 #' dat <- fread(path)
 #' res <- get_soc_code(dat, lvl = "soc_3")
-#' head(res[, .(code, Skill, Value)])
+#' head(res[, .(code, value)])
 #' @export
 get_soc_code <- function(data, lvl = "soc_3") {
 
