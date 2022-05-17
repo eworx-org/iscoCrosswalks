@@ -15,6 +15,9 @@
 #' @param indicator, Boolean indicating if data describe an indicator. If `TRUE`
 #' the mean value is computed, otherwise the sum by each breakdown group.
 #' 
+#' @returns `data.table` with the estimated values for the requested SOC
+#' occupational group.
+#' 
 #' @examples 
 #' library(iscoCrosswalks)
 #' library(data.table)

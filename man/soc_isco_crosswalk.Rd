@@ -24,6 +24,10 @@ soc_isco_crosswalk(
 \item{indicator, }{Boolean indicating if data describe an indicator. If \code{TRUE}
 the mean value is computed, otherwise the sum by each breakdown group.}
 }
+\value{
+\code{data.table} with the estimated values for the requested ISCO
+occupational level.
+}
 \description{
 The 2010 Standard Occupational Classification (SOC) and the
 International Standard Classification of Occupations (ISCO-08) are compared.
