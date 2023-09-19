@@ -46,7 +46,7 @@ an extra degree of detail.
 
 # Crosswalks
 
-This package introduces an alogithm that conducts approximate matching between the ISCO
+This package introduces an algorithm that conducts approximate matching between the ISCO
 and SOC classifications using concordances provided by the Institute for Structural
 Research and Faculty of Economics, University of Warsaw. The crosswalks offer a complete
 step-by-step mapping of O\*NET data to ISCO88 and ISCO-08 coding using an expanded version
